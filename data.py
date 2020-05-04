@@ -30,6 +30,7 @@ nyc_his_zcta_url = "https://raw.githubusercontent.com/thecityny/covid-19-nyc-dat
 nyc_his_url = "https://raw.githubusercontent.com/thecityny/covid-19-nyc-data/master/nyc.csv"
 
 
+
 def current_CovData():
     NY_State_url = "https://health.data.ny.gov/resource/xdss-u53e.csv"
     ny_csv = pd.read_csv(NY_State_url)
