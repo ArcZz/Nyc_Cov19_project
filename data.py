@@ -1,5 +1,7 @@
 import pyspark
 import pandas as pd
+from sodapy import Socrata
+from pyspark.sql.types import *
 from pyspark.sql.functions import *
 from pyspark.sql import SparkSession
 import pyspark.sql.functions as f
@@ -31,6 +33,11 @@ nyc_his_zcta_url = "https://raw.githubusercontent.com/thecityny/covid-19-nyc-dat
 nyc_his_url = "https://raw.githubusercontent.com/thecityny/covid-19-nyc-data/master/nyc.csv"
 
 
+#covid-19 impact
+#Licenses Applications
+nyc_licenseApp = "ptev-4hud"
+nyc_jobApp = "ic3t-wcy2"
+
 
 def current_CovData():
     NY_State_url = "https://health.data.ny.gov/resource/xdss-u53e.csv"
@@ -43,3 +50,29 @@ def current_CovData():
 def fetchData(url):
     pddf = pd.read_csv(url)
     return pddf
+
+
+def fetch_nycOpenData(url, timeout, row_limit):
+    client = Socrata("data.cityofnewyork.us",
+    "eXBsiqAwodiCMHDYEheExaF3v",
+    "17801001261@163.com",
+    "Monkeydluffy55!")
+    
+    client.timeout = timeout
+    # Returned as JSON from API / converted to Python list of dictionaries by sodapy.
+    results = client.get(url, limit = row_limit)
+
+    # Convert to pandas DataFrame
+    results_df = pd.DataFrame.from_records(results)
+    
+    return results_df
+
+#convert pandas dataframe to spark dataframe
+#set all data types to string
+def pandas_to_spark(pandas_df):
+    columns = list(pandas_df.columns)
+    struct_list = []
+    for column in columns:
+        struct_list.append(StructField(column, StringType()))
+    p_schema = StructType(struct_list)
+    return spark.createDataFrame(pandas_df, p_schema)
