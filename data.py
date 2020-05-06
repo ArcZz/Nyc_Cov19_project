@@ -17,6 +17,7 @@ nyc_summary_url = "https://raw.githubusercontent.com/nychealth/coronavirus-data/
 nyc_chd_url = "https://raw.githubusercontent.com/nychealth/coronavirus-data/master/case-hosp-death.csv"
 nyc_sex_url = "https://raw.githubusercontent.com/nychealth/coronavirus-data/master/by-sex.csv"
 nyc_pcd_url = "https://raw.githubusercontent.com/nychealth/coronavirus-data/master/Deaths/probable-confirmed-dod.csv"
+nyc_boro_url = "https://raw.githubusercontent.com/nychealth/coronavirus-data/master/boro.csv"
 
 # data collection 3
 # detail on https://github.com/thecityny/covid-19-nyc-data
