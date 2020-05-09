@@ -1,6 +1,6 @@
 import pyspark
 import pandas as pd
-#from sodapy import Socrata
+from sodapy import Socrata
 from pyspark.sql.types import *
 from pyspark.sql.functions import *
 from pyspark.sql import SparkSession
@@ -37,6 +37,7 @@ nyc_his_url = "https://raw.githubusercontent.com/thecityny/covid-19-nyc-data/mas
 #Licenses Applications
 nyc_licenseApp = "ptev-4hud"
 nyc_jobApp = "ic3t-wcy2"
+nyc_income = "hg8x-zxpr"
 
 
 def current_CovData():
