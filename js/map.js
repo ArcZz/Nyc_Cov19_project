@@ -8,8 +8,10 @@ var projection = d3.geoMercator()
 var svg = d3.select("#d3map")
             .append("svg")
             .attr("viewBox", [0, 0, 960, 960]);
-   
 
+           
+
+//queue.deder();
 
 d3.json("data/zip.geojson", function(error, nyc) {
     if (error){
