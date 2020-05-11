@@ -17,3 +17,21 @@ section {
 .section-tail {
   padding-bottom: 150px;
 }
+
+@media (min-width: 720px){
+  .info-box {
+  /* width: 300px; */
+  position: absolute;
+  padding: 7px;
+}
+}
+
+@media (max-width: 720px) {
+   .info-box {
+  position: relative;
+  padding: 7px;
+  }
+  
+
+ }
+ 

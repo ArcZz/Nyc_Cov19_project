@@ -25,7 +25,7 @@ var svg = d3.select("#d3map")
 //               .unknown('#eee')
 
 d3.queue()
-  .defer(d3.json, "data/nyctopo.json")
+  .defer(d3.json, "data/nyctop.json")
   .defer(d3.csv, "data/zdata.csv")
   .await(makeMap);
 
@@ -43,15 +43,10 @@ function makeMap(error, nyctopo, zdata) {
     posi.push(parseInt(d.Positive))
 
   });
-  console.log(num[11209])
 
 
   var color = d3.scaleSequential(d3.interpolateYlOrRd)
     .domain(d3.extent(posi))
-
-
-  //   d3.max(data, function(d){ return d.value; })
-  //   ])    
 
 
   var nyc = topojson.feature(nyctopo, nyctopo.objects.zipcode);
@@ -59,8 +54,6 @@ function makeMap(error, nyctopo, zdata) {
   projection = d3.geoIdentity()
     .reflectY(true)
     .fitSize([width, height], nyc)
-
-
 
 
   svg.selectAll("path")
@@ -72,32 +65,33 @@ function makeMap(error, nyctopo, zdata) {
 
     .attr("fill", function (d) {
       var zipcode = d.properties.zipcode;
-      console.log(num[zipcode])
+  
       if (typeof (num[zipcode]) == "undefined") {
         return "Lavender";
       }
-      //d.total = data.get(d.id) || 0;
+  
       return color(num[zipcode]);
     })
-    // .attr('fill', 'Lavender')
-
-    // .attr("fill", function(d,i){
-    //       return d3.color(i);
-    //     })
+  
     .on("mouseover", function (d, i) {
+      console.log(d)
 
       var zipcode = d.properties.zipcode;
       if (typeof (num[zipcode]) == "undefined") {
         return "Lavender";
       }
-
       //d3.select(this).attr("fill",color(num[zipcode]));
-      d3.select(this).attr("fill", '#add588');
+      d3.select(this).attr("fill", '#73bd41');
+      // + "of every 1k residents"
+      $("#myzip").text(d.properties.zipcode );
+      $("#myname").text(d.properties.neighborhood);
+       $("#mypos").text(d.properties.positive_num );
+        $("#mytest").text(d.properties.test_num );
+         $("#myzip").text(d.properties.population );
+
 
     })
-    // .on("mouseout",function(d,i){
-    //     d3.select(this).attr("fill",d3.color(i));
-    //   });
+   
     .on("mouseout", function (d, i) {
       var zipcode = d.properties.zipcode;
       if (typeof (num[zipcode]) == "undefined") {
@@ -137,35 +131,8 @@ function makeMap(error, nyctopo, zdata) {
 //     .style("stroke", "transparent")
 // }
 
-// var center = d3.geoCentroid(nyc);
-// projection.center(center)
-// projection.fitExtent([[0, 0],[960, 960],], nyc);
 
-
-// svg.selectAll("path")
-//   .data(nyc.features)
-//   .enter()
-//   .append("path")
-//   .attr("d", d3.geoPath().projection(projection))
-//   .attr("stroke","#747473")
-//   .attr("stroke-width",.8)
-//   .attr('fill', 'Lavender')
-//   // .attr("fill", function (d) {
-//   //   d.total = data.get(d.id) || 0;
-//   //   return colorScale(d.total);
-//   // })
-//   // .attr("fill", function(d,i){
-//   //       return d3.color(i);
-//   //     })
-//   .on("mouseover",function(d,i){
-//       d3.select(this).attr("fill","yellow");
-//       })
-//   // .on("mouseout",function(d,i){
-//   //     d3.select(this).attr("fill",d3.color(i));
-//   //   });
-//   .on("mouseout",function(d,i){
-//       d3.select(this).attr("fill",'Lavender');
-//     });      
+    
 
 
 
@@ -177,37 +144,37 @@ function makeMap(error, nyctopo, zdata) {
 
 //   if (!info) return;
 
-//   if (data) info.innerHTML = `<div class="info">
-//     <h4>${data.zipcode}</h4>
-//     <h5>${new RegExp(`${data.borough}$`).test(data.neighborhood)
-//       ? data.neighborhood || data.po_name
-//       : `${data.neighborhood}, ${data.borough}`}</h5>
-//     <table>
-//       <tr>
-//         <th>Population</th>
-//         <td>${format_int(data.population)} (${format_int(data.density)} people per sq mi)</td>
-//       </tr>
-//       <tr>
-//         <th>Tests</th>
-//         <td>${format_int(data.tested || 0)}${data.tested && ` (${format_int(data.tested_per_1k)} of every 1k residents)` || ''}</td>
-//       </tr>
-//       <tr>
-//         <th>Positives</th>
-//         <td>${format_int(data.positive || 0)}${data.positive && ` (${format_percent(data.positive_ratio)}, ${format_int(data.positive_per_1k)} of every 1k residents)` || ''}</td>
-//       </tr>
-//       <tr>
-//         <th>Income</th>
-//         <td>${data.agi_total &&
-//           `<ul>
-//             ${[25, 50, 75, 100, 200]
-//               .map(agi => [`$${agi}k`, format_percent(data[`agi_lt${agi}`])])
-//               .map(([key, value]) => `<li>${value} made under ${key} in 2017</li>`)
-//               .join('')}
-//           </ul>` || '—'
-//         }</td>
-//       </tr>
-//     </table>
-//   </div>`;
+  // if (data) info.innerHTML = `<div class="info">
+  //   <h4>${data.zipcode}</h4>
+  //   <h5>${new RegExp(`${data.borough}$`).test(data.neighborhood)
+  //     ? data.neighborhood || data.po_name
+  //     : `${data.neighborhood}, ${data.borough}`}</h5>
+  //   <table>
+  //     <tr>
+  //       <th>Population</th>
+  //       <td>${format_int(data.population)} (${format_int(data.density)} people per sq mi)</td>
+  //     </tr>
+  //     <tr>
+  //       <th>Tests</th>
+  //       <td>${format_int(data.tested || 0)}${data.tested && ` (${format_int(data.tested_per_1k)} of every 1k residents)` || ''}</td>
+  //     </tr>
+  //     <tr>
+  //       <th>Positives</th>
+  //       <td>${format_int(data.positive || 0)}${data.positive && ` (${format_percent(data.positive_ratio)}, ${format_int(data.positive_per_1k)} of every 1k residents)` || ''}</td>
+  //     </tr>
+  //     <tr>
+  //       <th>Income</th>
+  //       <td>${data.agi_total &&
+  //         `<ul>
+  //           ${[25, 50, 75, 100, 200]
+  //             .map(agi => [`$${agi}k`, format_percent(data[`agi_lt${agi}`])])
+  //             .map(([key, value]) => `<li>${value} made under ${key} in 2017</li>`)
+  //             .join('')}
+  //         </ul>` || '—'
+  //       }</td>
+  //     </tr>
+  //   </table>
+  // </div>`;
 
 //   else info.innerHTML = '';
 // }
