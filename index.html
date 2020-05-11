@@ -62,12 +62,12 @@
       <div class="row">
         <div class="col-lg-10 mx-auto">
           <h2>About this Project</h2>
-          <p class="lead">As we are living in unprecedented times of pandemic, our team would like to put our efforts and contribute to battling COVID-19 health crisis. This project aims to help track and analyze the current COVID pandemic spread in NYC across the five boroughs: Manhattan, Queens, Brooklyn, and Staten Island. In addition, we included studies of relations between pandemic and its influential factors: age, income. Moreover, we analyzed impacted areas due to the burst of the virus: job market, business license application, public transportation, and permitted events. Based on current data, we forecasted the number of positive cases using machine learning algorithms.</p>
+          <p class="lead">As we are living in unprecedented times of pandemic, our team would like to put our efforts and contribute to battling COVID-19 health crisis. This project aims to help track and analyze the current COVID pandemic spread in NYC across the five boroughs: Manhattan, Queens, Brooklyn, and Staten Island. In addition, we included studies of relations between pandemic and its influential factors: age, income. Moreover, we analyzed impacted areas due to the burst of the virus: job market, business license application, certificate of occupancy issued for new buildings, public transportation, emergency notification for public health, and permitted events. Based on current data, we forecasted the number of positive cases using machine learning algorithms.</p>
           <ul>
             <li>Positive tests tracking map</li>
             <li>Infections and fatalities analysis</li>
             <li>Influential factors: Who is getting sick</li>
-            <li>Impacted areas: job market, license application, traffic collison and permitted events</li>
+            <li>Impacted areas: job market, business license application, certificate of occupancy issued for new buildings, traffic collison, emergency notification for public health and permitted events</li>
           </ul>
         </div>
       </div>
@@ -191,11 +191,14 @@
       <div class="row">
         <div class="col-lg-10 mx-auto">
           <h2>Who is Getting Sick</h2>
-          <p class="lead">Age + income</p>
           <p>Update: 2020-05-10	(from 2020-03-12)</p>
           <table><tr>
             <td><img src="picture/part1/age_group.png"/></td>
             <td><img src="picture/part1/age_group_rate.png"/></td>
+          </tr></table>
+          <p class="lead"></br></br>The table below shows the relationship between COVID-19 positive cases and income. We use zipcode as the x-axis unit, the low-income group(blue part) gradually increases on the x-axis, and the positive cases(orange part) increase in the latter half of the x-axis, which shows that income has a certain impact on infection of COVID-19, but it is not significant.</p>
+          <table><tr>
+            <td><img src="picture/impact/income_positive.png" width="1000" height="200"/></td>
           </tr></table>
         </div>
       </div>
@@ -207,10 +210,16 @@
       <div class="row">
         <div class="col-lg-10 mx-auto">
           <h2>COVID-19 Impact on NYC</h2>
-          <p class="lead">We analyze COVID-19 Impact on job market, business license application, public transportation, and permitted events, balabalabalaaaaa.</p>
+          <p class="lead">We analyze COVID-19 Impact on job market, business license application, certificate of occupancy issued for new buildings, public transportation, emergency notification for public health, and permitted events.</br>Compare with the average two months ago, the result shows that job application(down 36.13%), business license application(down 86.98%), certificate of occupancy issued for new buildings(down 33.43%) are declining. While emergency notification for public health(up 1362.50%) is increasing.</p>
+          <h5>Categories That Are Falling</h5>
           <table><tr>
-            <td><img src="picture/job.png" width="320" height="220" /></td>
-            <td><img src="picture/license.png" width="320" height="220" /></td>
+            <td><img src="picture/impact/job.png" width="320" height="220" /></td>
+            <td><img src="picture/impact/license.png" width="320" height="220" /></td>
+            <td><img src="picture/impact/c_o_issue.png" width="320" height="220" /></td>
+          </tr></table>
+          <h5>Categories That Are Rising</h5>
+          <table><tr>
+            <td><img src="picture/impact/public_health_noti.png" width="320" height="220" /></td>
           </tr></table>
         </div>
       </div>
