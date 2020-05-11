@@ -38,6 +38,8 @@ nyc_his_url = "https://raw.githubusercontent.com/thecityny/covid-19-nyc-data/mas
 nyc_licenseApp = "ptev-4hud"
 nyc_jobApp = "ic3t-wcy2"
 nyc_income = "hg8x-zxpr"
+nyc_publicHealthNoti = "8vv7-7wx3"
+nyc_C_O_issue = "bs8b-p36w"
 
 
 def current_CovData():
