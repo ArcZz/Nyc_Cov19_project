@@ -30,6 +30,12 @@ d3.queue()
   .await(makeMap);
 
 
+function toPercent(point) {
+  var str = Number(point * 100).toFixed(2);
+  str += "%";
+  return str;
+}
+
 function makeMap(error, nyctopo, zdata) {
 
   if (error) throw error;
@@ -65,14 +71,14 @@ function makeMap(error, nyctopo, zdata) {
 
     .attr("fill", function (d) {
       var zipcode = d.properties.zipcode;
-  
+
       if (typeof (num[zipcode]) == "undefined") {
         return "Lavender";
       }
-  
+
       return color(num[zipcode]);
     })
-  
+
     .on("mouseover", function (d, i) {
       console.log(d)
 
@@ -82,16 +88,26 @@ function makeMap(error, nyctopo, zdata) {
       }
       //d3.select(this).attr("fill",color(num[zipcode]));
       d3.select(this).attr("fill", '#73bd41');
-      // + "of every 1k residents"
-      $("#myzip").text(d.properties.zipcode );
+
+
+      $("#myzip").text(d.properties.zipcode + " "+ "("+ d.properties.borough+")");
       $("#myname").text(d.properties.neighborhood);
-       $("#mypos").text(d.properties.positive_num );
-        $("#mytest").text(d.properties.test_num );
-         $("#myzip").text(d.properties.population );
+      $("#myboro").text(d.properties.borough);
+      $("#po_name").text(d.properties.po_name);
+      $("#mypos").text(d.properties.positive_num);
+      $("#mytest").text(d.properties.test_num);
+      $("#myrate").text(d.properties.zcta_prec);
+      $("#mypop").text(d.properties.population);
+      $("#inco1").text(toPercent(d.properties.agi_1_lt25 / d.properties.agi_total));
+      $("#inco2").text(toPercent(d.properties.agi_25_lt50 / d.properties.agi_total));
+      $("#inco3").text(toPercent(d.properties.agi_50_lt75 / d.properties.agi_total));
+      $("#inco4").text(toPercent(d.properties.agi_75_lt100 / d.properties.agi_total));
+      $("#inco5").text(toPercent(d.properties.agi_100_lt200 / d.properties.agi_total));
+      $("#inco6").text(toPercent(d.properties.agi_gte200 / d.properties.agi_total));
 
 
     })
-   
+
     .on("mouseout", function (d, i) {
       var zipcode = d.properties.zipcode;
       if (typeof (num[zipcode]) == "undefined") {
@@ -132,7 +148,7 @@ function makeMap(error, nyctopo, zdata) {
 // }
 
 
-    
+
 
 
 
@@ -144,37 +160,37 @@ function makeMap(error, nyctopo, zdata) {
 
 //   if (!info) return;
 
-  // if (data) info.innerHTML = `<div class="info">
-  //   <h4>${data.zipcode}</h4>
-  //   <h5>${new RegExp(`${data.borough}$`).test(data.neighborhood)
-  //     ? data.neighborhood || data.po_name
-  //     : `${data.neighborhood}, ${data.borough}`}</h5>
-  //   <table>
-  //     <tr>
-  //       <th>Population</th>
-  //       <td>${format_int(data.population)} (${format_int(data.density)} people per sq mi)</td>
-  //     </tr>
-  //     <tr>
-  //       <th>Tests</th>
-  //       <td>${format_int(data.tested || 0)}${data.tested && ` (${format_int(data.tested_per_1k)} of every 1k residents)` || ''}</td>
-  //     </tr>
-  //     <tr>
-  //       <th>Positives</th>
-  //       <td>${format_int(data.positive || 0)}${data.positive && ` (${format_percent(data.positive_ratio)}, ${format_int(data.positive_per_1k)} of every 1k residents)` || ''}</td>
-  //     </tr>
-  //     <tr>
-  //       <th>Income</th>
-  //       <td>${data.agi_total &&
-  //         `<ul>
-  //           ${[25, 50, 75, 100, 200]
-  //             .map(agi => [`$${agi}k`, format_percent(data[`agi_lt${agi}`])])
-  //             .map(([key, value]) => `<li>${value} made under ${key} in 2017</li>`)
-  //             .join('')}
-  //         </ul>` || '—'
-  //       }</td>
-  //     </tr>
-  //   </table>
-  // </div>`;
+// if (data) info.innerHTML = `<div class="info">
+//   <h4>${data.zipcode}</h4>
+//   <h5>${new RegExp(`${data.borough}$`).test(data.neighborhood)
+//     ? data.neighborhood || data.po_name
+//     : `${data.neighborhood}, ${data.borough}`}</h5>
+//   <table>
+//     <tr>
+//       <th>Population</th>
+//       <td>${format_int(data.population)} (${format_int(data.density)} people per sq mi)</td>
+//     </tr>
+//     <tr>
+//       <th>Tests</th>
+//       <td>${format_int(data.tested || 0)}${data.tested && ` (${format_int(data.tested_per_1k)} of every 1k residents)` || ''}</td>
+//     </tr>
+//     <tr>
+//       <th>Positives</th>
+//       <td>${format_int(data.positive || 0)}${data.positive && ` (${format_percent(data.positive_ratio)}, ${format_int(data.positive_per_1k)} of every 1k residents)` || ''}</td>
+//     </tr>
+//     <tr>
+//       <th>Income</th>
+//       <td>${data.agi_total &&
+//         `<ul>
+//           ${[25, 50, 75, 100, 200]
+//             .map(agi => [`$${agi}k`, format_percent(data[`agi_lt${agi}`])])
+//             .map(([key, value]) => `<li>${value} made under ${key} in 2017</li>`)
+//             .join('')}
+//         </ul>` || '—'
+//       }</td>
+//     </tr>
+//   </table>
+// </div>`;
 
 //   else info.innerHTML = '';
 // }

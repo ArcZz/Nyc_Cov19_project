@@ -151,10 +151,11 @@
         <div class="col-lg-10  mx-auto">
           <h2>Map for cov19</h2>
           <p class="lead">Lorem ipsum</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut optio velit inventore, expedita quo
-            laboriosam possimus ea consequatur vitae, doloribus consequuntur ex. Nemo assumenda laborum vel, labore ut
-            velit dignissimos.</p>
-          <h4>Map for cov19</h4>
+          <p>Data from Map and population data from NYC OpenData.
+Income data from the IRS.
+Zip code naming from United Hospital Fund.
+(Live updating) COVID testing data from NYC Department of Health. </p>
+        
           <!-- <div class="row">
            <div class="col-lg-1">
 
@@ -162,44 +163,57 @@
 
           <div id="d3map">
             <div  class="  bg-light  info-box border border-light">
-            <h5 id="myzip">Zipcode </h5>
-            <span id="myname">Name</span>
-
+            <h5 id="myzip">Zipcode  </h5>
+            <span id="myname">Name</span><br/>
+            <span id="po_name">Po</span>
 
             <table>
               <tr>
                 <th>Test:</th>
-                <td id="mytest">_</td>
+                <td id="mytest">-</td>
               </tr>
               <tr>
                 <th>Positives :</th>
-                <td id="mypos">_</td>
+                <td id="mypos">-</td>
               </tr>
                 <tr>
                 <th>Positives Rate :</th>
-                <td><span>_<span> </td>
+                <td id="myrate">-</td>
               </tr>
                <tr>
                 <th>Population :</th>
-                <td>_</td>
+                <td id="mypop">-</td>
               </tr>
               <tr>
-                <th>Income :</th>
+                <th>Annual Income: (2017) </th>
               </tr>
               <tr>
-                <td>>25 income people:</td>
-                <td>12321%</td>
+                <td>under $25k income:</td>
+                <td id="inco1">12321%</td>
               </tr>
                <tr>
-                <td>>25 income people:</td>
-                <td>12321%</td>
+                <td> $25k - 50k income:</td>
+                <td id="inco2">12321%</td>
               </tr>
                <tr>
-                <td>>25 income people:</td>
-                <td>12321%</td>
+                <td> $50k - 75k income:</td>
+                <td id="inco3">12321%</td>
               </tr>
+               <tr>
+                <td> $75k - 100k income:</td>
+                <td id="inco4">12321%</td>
+              </tr>
+              <tr>
+                <td> $100k - 200k income:</td>
+                <td id="inco5">12321%</td>
+              </tr>
+               <tr>
+                <td>  above $200k income:</td>
+                <td id="inco6">12321%</td>
+              </tr>
+           
             </table>
-
+               
           </div>
           </div>
           </div>
