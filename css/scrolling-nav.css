@@ -3,6 +3,38 @@
  * Copyright 2013-2019 Start Bootstrap
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-scrolling-nav/blob/master/LICENSE)
  */
+
+      .github-corner:hover .octo-arm {
+        animation: octocat-wave 560ms ease-in-out
+      }
+
+      @keyframes octocat-wave {
+
+        0%,
+        100% {
+          transform: rotate(0)
+        }
+
+        20%,
+        60% {
+          transform: rotate(-25deg)
+        }
+
+        40%,
+        80% {
+          transform: rotate(10deg)
+        }
+      }
+
+      @media (max-width:500px) {
+        .github-corner:hover .octo-arm {
+          animation: none
+        }
+
+        .github-corner .octo-arm {
+          animation: octocat-wave 560ms ease-in-out
+        }
+      }
 header {
   padding: 156px 0 100px;
 }
@@ -15,7 +47,7 @@ section {
   padding-top: 120px;
 }
 .section-tail {
-  padding-bottom: 150px;
+  padding-bottom: 200px;
 }
 
 @media (min-width: 720px){
@@ -35,3 +67,12 @@ section {
 
  }
  
+ .odometer{
+  /* font-size: 60px;
+  margin: 10px 0;
+  text-align: center;
+  width: 100%; */
+  animation-duration: 3s;
+
+
+ }

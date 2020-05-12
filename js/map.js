@@ -1,3 +1,17 @@
+
+// var odometer = new Odometer({ 
+//   el: $('.odometer')[0], 
+//   value: 0, 
+//   theme: 'minimal',
+//   duration: 500
+// });
+// odometer.render();
+// $('#odometer').text(9000);
+
+
+
+
+
 var width = 960,
   height = 960;
 var draw = 0;
@@ -117,80 +131,9 @@ function makeMap(error, nyctopo, zdata) {
     });
 
 
-
-
 };
 
 
 
 
-// let mouseOver = function(d) {
-//   d3.selectAll(".zipcode")
-//     .transition()
-//     .duration(0)
-//     .style("opacity", .6)
-//   d3.select(this)
-//     .transition()
-//     .duration(200)
-//     .style("opacity", 1)
-//     .style("stroke", "black")
-// }
 
-// let mouseLeave = function(d) {
-//   d3.selectAll(".zipcode")
-//     .transition()
-//     .duration(200)
-//     .style("opacity", .8)
-//   d3.select(this)
-//     .transition()
-//     .duration(200)
-//     .style("stroke", "transparent")
-// }
-
-
-
-
-
-
-
-
-
-// my_info = (data) => {
-//   const info = document.getElementById('graphic-info');
-
-//   if (!info) return;
-
-// if (data) info.innerHTML = `<div class="info">
-//   <h4>${data.zipcode}</h4>
-//   <h5>${new RegExp(`${data.borough}$`).test(data.neighborhood)
-//     ? data.neighborhood || data.po_name
-//     : `${data.neighborhood}, ${data.borough}`}</h5>
-//   <table>
-//     <tr>
-//       <th>Population</th>
-//       <td>${format_int(data.population)} (${format_int(data.density)} people per sq mi)</td>
-//     </tr>
-//     <tr>
-//       <th>Tests</th>
-//       <td>${format_int(data.tested || 0)}${data.tested && ` (${format_int(data.tested_per_1k)} of every 1k residents)` || ''}</td>
-//     </tr>
-//     <tr>
-//       <th>Positives</th>
-//       <td>${format_int(data.positive || 0)}${data.positive && ` (${format_percent(data.positive_ratio)}, ${format_int(data.positive_per_1k)} of every 1k residents)` || ''}</td>
-//     </tr>
-//     <tr>
-//       <th>Income</th>
-//       <td>${data.agi_total &&
-//         `<ul>
-//           ${[25, 50, 75, 100, 200]
-//             .map(agi => [`$${agi}k`, format_percent(data[`agi_lt${agi}`])])
-//             .map(([key, value]) => `<li>${value} made under ${key} in 2017</li>`)
-//             .join('')}
-//         </ul>` || '—'
-//       }</td>
-//     </tr>
-//   </table>
-// </div>`;
-
-//   else info.innerHTML = '';
-// }

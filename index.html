@@ -12,9 +12,12 @@
 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
+   <link rel="stylesheet" href="https://github.hubspot.com/odometer/themes/odometer-theme-minimal.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.3/animate.min.css" />
+  
   <!-- Custom styles for this template -->
   <link href="css/scrolling-nav.css" rel="stylesheet">
+  
 
 </head>
 
@@ -22,9 +25,9 @@
 
   <!-- Navigation -->
   <nav class="navbar  navbar-expand-lg navbar-light bg-light fixed-top" id="mainNav">
-    <a href="https://your-url" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80"
-        viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;"
-        aria-hidden="true">
+    <a href="https://github.com/ArcZz/Nyc_Cov19_project" class="github-corner" aria-label="View source on GitHub"><svg
+        width="80" height="80" viewBox="0 0 250 250"
+        style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true">
         <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
         <path
           d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
@@ -33,39 +36,6 @@
           d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
           fill="currentColor" class="octo-body"></path>
       </svg></a>
-    <style>
-      .github-corner:hover .octo-arm {
-        animation: octocat-wave 560ms ease-in-out
-      }
-
-      @keyframes octocat-wave {
-
-        0%,
-        100% {
-          transform: rotate(0)
-        }
-
-        20%,
-        60% {
-          transform: rotate(-25deg)
-        }
-
-        40%,
-        80% {
-          transform: rotate(10deg)
-        }
-      }
-
-      @media (max-width:500px) {
-        .github-corner:hover .octo-arm {
-          animation: none
-        }
-
-        .github-corner .octo-arm {
-          animation: octocat-wave 560ms ease-in-out
-        }
-      }
-    </style>
 
     <div class="container">
       <a class=" navbar-brand js-scroll-trigger" href="#page-top">Coronavirus NYC</a>
@@ -97,7 +67,6 @@
       <h1>Big Data Final Project</h1>
       <p class="lead">New York City Coronavirus Data Analysis</p>
       <p> Team Member: Zhi Zhang, Jessie Jin, Xuexuan Wang, Jenny Zhou</p>
-
     </div>
   </header>
 
@@ -106,12 +75,21 @@
       <div class="row">
         <div class="col-lg-10 mx-auto">
           <h2>About this Project</h2>
-          <p class="lead">As we are living in unprecedented times of pandemic, our team would like to put our efforts and contribute to battling COVID-19 health crisis. This project aims to help track and analyze the current COVID pandemic spread in NYC across the five boroughs: Manhattan, Queens, Brooklyn, and Staten Island. In addition, we included studies of relations between pandemic and its influential factors: age, income and traffic. Moreover, we analyzed impacted areas due to the burst of the virus: job market, business license application, certificate of occupancy issued for new buildings, public transportation, emergency notification for public health, hospital icu beds and permitted events. Based on current data, we forecasted the number of positive cases using machine learning algorithms.</p>
+          <p class="lead">As we are living in unprecedented times of pandemic, our team would like to put our efforts
+            and contribute to battling COVID-19 health crisis. This project aims to help track and analyze the current
+            COVID pandemic spread in NYC across the five boroughs: Manhattan, Queens, Brooklyn, and Staten Island. In
+            addition, we included studies of relations between pandemic and its influential factors: age, income and
+            traffic. Moreover, we analyzed impacted areas due to the burst of the virus: job market, business license
+            application, certificate of occupancy issued for new buildings, public transportation, emergency
+            notification for public health, hospital icu beds and permitted events. Based on current data, we forecasted
+            the number of positive cases using machine learning algorithms.</p>
           <ul>
             <li>Positive tests tracking map</li>
             <li>Infections and fatalities analysis</li>
             <li>Influential factors: Who is getting sick</li>
-            <li>Impacted areas: job market, business license application, certificate of occupancy issued for new buildings, traffic collison, emergency notification for public health, hospital icu beds and permitted events</li>
+            <li>Impacted areas: job market, business license application, certificate of occupancy issued for new
+              buildings, traffic collison, emergency notification for public health, hospital icu beds and permitted
+              events</li>
           </ul>
           <h5>Data: </h5>
           <ul>
@@ -131,108 +109,118 @@
     </div>
   </section>
 
-
   <section id="NYC COVID-19 Data Summary">
     <div class="container">
       <div class="row">
         <div class="col-lg-10 mx-auto">
           <h2>NYC COVID-19 Summary</h2>
-          <p>Update: 2020-05-10 (from 2020-03-12)</p>
-          <table>
-            <tr>
-              <td><img src="picture/part1/nyc_summary_chart.png" width="480" height="300" /></td>
-            </tr>
-          </table>
+          <p>Data Update: 2020-05-10 (from 2020-03-12)</p>
+          <div class="row" style="margin-top: 50px;">
+            <div class="col-lg-4 mx-auto" align="center">
+              <h3 id="odometer" class="odometer">  </h3>
+              <h5>Case</h5>
+            </div>
+            <div class="col-lg-4 mx-auto" align="center">
+              <h3 class="odometer"></h3>
+               <h5>Death</h5>
+            </div>
+            <div class="col-lg-4 mx-auto" align="center">
+              <h3 class="odometer"></h3>
+               <h5>Hosplitalized</h5>
+            </div>
+          </div>
         </div>
-        <div class="col-lg-10 mx-auto">
-          <p class="lead"><br>NYC COVID-19 Cases, Deaths and Hosplitalized Data and Cases Growth Rate</p>
-          <table>
-            <tr>
-              <td><img src="picture/part1/citywide_data.png" /></td>
-            </tr>
-            <tr>
-              <td><img src="picture/part1/nyc_cases_growth_rate.png" width="566" height="425" /></td>
-            </tr>
-          </table>
+  
+        <div class="col-lg-10 mx-auto"  align="center" style="margin-top: 10px;" >
+         <p class="lead"><br>NYC COVID-19 Cases, Deaths and Hosplitalized Data and Cases Growth Number</p>
+          <img src="picture/part1/nyc_summary_chart.png" width="480" height="300" />
         </div>
+         <div class="col-lg-10 mx-auto"  align="center" >
+            <p class="lead"><br>Cases, Deaths and Hosplitalized Data and Cases Growth Rate</p>
+         <img src="picture/part1/citywide_data.png"  width="566" height="425" />
+        </div>
+         <div class="col-lg-10 mx-auto"  align="center" >
+          <img src="picture/part1/nyc_cases_growth_rate.png" width="566" height="425" />
+        </div>
+        
       </div>
     </div>
   </section>
-    <section id="Map">
+  <section id="Map">
     <div class="container">
       <div class="row">
         <div class="col-lg-10  mx-auto">
           <h2>Map for cov19</h2>
           <p class="lead">Lorem ipsum</p>
           <p>Data from Map and population data from NYC OpenData.
-Income data from the IRS.
-Zip code naming from United Hospital Fund.
-(Live updating) COVID testing data from NYC Department of Health. </p>
-        
+            Income data from the IRS.
+            Zip code naming from United Hospital Fund.
+            (Live updating) COVID testing data from NYC Department of Health. </p>
+
           <!-- <div class="row">
            <div class="col-lg-1">
 
           </div> -->
 
           <div id="d3map">
-            <div  class="  bg-light  info-box border border-light">
-            <h5 id="myzip">Zipcode  </h5>
-            <span id="myname">Name</span><br/>
-            <span id="po_name">Po</span>
+            <div class="  bg-light  info-box border border-light">
+              <h5 id="myzip">Zipcode </h5>
+              <span id="myname">Name</span><br />
+              <span id="po_name">-</span>
 
-            <table>
-              <tr>
-                <th>Test:</th>
-                <td id="mytest">-</td>
-              </tr>
-              <tr>
-                <th>Positives :</th>
-                <td id="mypos">-</td>
-              </tr>
+              <table>
                 <tr>
-                <th>Positives Rate :</th>
-                <td id="myrate">-</td>
-              </tr>
-               <tr>
-                <th>Population :</th>
-                <td id="mypop">-</td>
-              </tr>
-              <tr>
-                <th>Annual Income: (2017) </th>
-              </tr>
-              <tr>
-                <td>under $25k income:</td>
-                <td id="inco1">-</td>
-              </tr>
-               <tr>
-                <td> $25k - 50k income:</td>
-                <td id="inco2">-</td>
-              </tr>
-               <tr>
-                <td> $50k - 75k income:</td>
-                <td id="inco3">-</td>
-              </tr>
-               <tr>
-                <td> $75k - 100k income:</td>
-                <td id="inco4">-</td>
-              </tr>
-              <tr>
-                <td> $100k - 200k income:</td>
-                <td id="inco5">-</td>
-              </tr>
-               <tr>
-                <td>  above $200k income:</td>
-                <td id="inco6">-</td>
-              </tr>
-           
-            </table>
-               
-          </div>
-          </div>
-          </div>
+                  <th>Test:</th>
+                  <td id="mytest">-</td>
+                </tr>
+                <tr>
+                  <th>Positives :</th>
+                  <td id="mypos">-</td>
+                </tr>
+                <tr>
+                  <th>Positives Rate :</th>
+                  <td id="myrate">-</td>
+                </tr>
+                <tr>
+                  <th>Population :</th>
+                  <td id="mypop">-</td>
+                </tr>
+                <tr>
+                  <th>Annual Income: (2017) </th>
+                </tr>
+                <tr>
+                  <td>under $25k income:</td>
+                  <td id="inco1">-</td>
+                </tr>
+                <tr>
+                  <td> $25k - 50k income:</td>
+                  <td id="inco2">-</td>
+                </tr>
+                <tr>
+                  <td> $50k - 75k income:</td>
+                  <td id="inco3">-</td>
+                </tr>
+                <tr>
+                  <td> $75k - 100k income:</td>
+                  <td id="inco4">-</td>
+                </tr>
+                <tr>
+                  <td> $100k - 200k income:</td>
+                  <td id="inco5">-</td>
+                </tr>
+                <tr>
+                  <td> above $200k income:</td>
+                  <td id="inco6">-</td>
+                </tr>
+
+              </table>
+
+            </div>
           </div>
         </div>
       </div>
+    </div>
+    </div>
     </div>
   </section>
 
@@ -245,18 +233,58 @@ Zip code naming from United Hospital Fund.
           <p>Update: 2020-05-09 (from 2020-03-12)</p>
           <table>
             <tr>
-              <td><img src="picture/part1/bronx_data.png" width="460" height="375" /></td>
+                <td align="center"  >
+                  <p align="center" style = "display: inline;"  >number</p>
+                <iframe src="nycnum.html" width="500" height="400" >
+                  <p>Your browser does not support iframes.</p>
+                </iframe>
+                </td >
+                <td>
+                  <img src="picture/part1/bronx_data.png" width="460" height="375" /></td>
+              
+            </tr>
+             <tr>
+               <td align="center"  >
+                 <p align="center" style = "display: inline;"  >rate</p>
+
+                 <iframe src="nycrate.html" width="500" height="400"  >
+                  <p>Your browser does not support iframes.</p>
+                </iframe>
+                </td>
+            
               <td><img src="picture/part1/borrklyn_data.png" width="460" height="375" /></td>
-            </tr>
-          </table>
-          <table>
+             </tr>
             <tr>
+               <td align="center"  >
+                 <p align="center" style = "display: inline;"  >zipcode number </p>
+
+                 <iframe src="zctab.html" width="500" height="400"  >
+                  <p>Your browser does not support iframes.</p>
+                </iframe>
+                </td>
+            
               <td><img src="picture/part1/manhattan_data.png" width="460" height="375" /></td>
-              <td><img src="picture/part1/queens_data.png" width="460" height="375" /></td>
+            
             </tr>
           </table>
           <table>
+           
+          </table>
+          <table>
             <tr>
+              <td align="center"  >
+                 <p align="center" style = "display: inline;"  >zipcode  rate</p>
+
+                 <iframe src="zctap.html" width="500" height="400"  >
+                  <p>Your browser does not support iframes.</p>
+                </iframe>
+                </td>
+                <td><img src="picture/part1/queens_data.png" width="460" height="375" /></td>
+              
+            </tr>
+            <tr>
+            
+                <td> </td>
               <td><img src="picture/part1/Staten_Island_data.png" width="460" height="375" /></td>
             </tr>
           </table>
@@ -336,24 +364,34 @@ Zip code naming from United Hospital Fund.
             <li>Traffic: boroughs with more traffics have the higher number of COVID-19 infections.</br></br></br></li>
           </ul>
           <h4 style="text-align:center">—— How Age Affects The Positive Popilation ——</h4>
-          <p></br>Update: 2020-05-10	(from 2020-03-12)</p>
-          <table><tr>
-            <td><img src="picture/part1/age_group.png"/></td>
-            <td><img src="picture/part1/age_group_rate.png"/></td>
-          </tr></table>
+          <p></br>Update: 2020-05-10 (from 2020-03-12)</p>
+          <table>
+            <tr>
+              <td><img src="picture/part1/age_group.png" /></td>
+              <td><img src="picture/part1/age_group_rate.png" /></td>
+            </tr>
+          </table>
           <h4 style="text-align:center"></br></br>—— How Income Affects The Positive Popilation ——</h4>
-          <p class="lead"></br>The table below shows the relationship between COVID-19 positive case and income. The number of low-income units (blue part) gradually increases on the x-axis. The latter half of the x-axis shows that COVID-19 positive cases (orange part) is also increasing with the increase of number of low-income units.</p>
-          <img src="picture/impact/income_positive.png" width="1000" height="200"/>
+          <p class="lead"></br>The table below shows the relationship between COVID-19 positive case and income. The
+            number of low-income units (blue part) gradually increases on the x-axis. The latter half of the x-axis
+            shows that COVID-19 positive cases (orange part) is also increasing with the increase of number of
+            low-income units.</p>
+          <img src="picture/impact/income_positive.png" width="1000" height="200" />
           <p class="lead"></br></p>
           <table><tr>
             <td><img src="picture/impact/income_positive_table.png" width="250" height="180"/></td>
             <td><p class="lead" style = " margin-left:30px;"></br></br>According to the income, we divide the data into three groups. The result shows that the positive cases from the low-income group is much more than the middle-income group and moderate-income group.</p></td>
           </tr></table>
           <h4 style="text-align:center"></br></br>—— How Traffic Affects The Positive Popilation ——</h4>
-          <p class="lead"></br></br>The bar graphs below show the number of car crashes and number of COVID-19 cases acrossing the five boroughs. Queens and Brooklyn have the highest number of infections also have the highest number of car crashes. Since data on nyc traffics are limited, number of car crashes is used to feflect the traffics. This shows that the areas where have more traffics tend to have more COVID-19 cases. </p>
-          <table><tr>
-            <td><img src="picture/impact/traffic.png" width="500" height="450"/></td>
-          </tr></table>
+          <p class="lead"></br></br>The bar graphs below show the number of car crashes and number of COVID-19 cases
+            acrossing the five boroughs. Queens and Brooklyn have the highest number of infections also have the highest
+            number of car crashes. Since data on nyc traffics are limited, number of car crashes is used to feflect the
+            traffics. This shows that the areas where have more traffics tend to have more COVID-19 cases. </p>
+          <table>
+            <tr>
+              <td><img src="picture/impact/traffic.png" width="500" height="450" /></td>
+            </tr>
+          </table>
         </div>
       </div>
     </div>
@@ -364,31 +402,45 @@ Zip code naming from United Hospital Fund.
       <div class="row">
         <div class="col-lg-10 mx-auto">
           <h2>COVID-19 Impact on NYC</h2>
-          <p class="lead">We analyze COVID-19 Impact on job market, business license application, certificate of occupancy issued for new buildings, public transportation, emergency notification for public health, and permitted events.</br>Compare with the average two months ago, the result shows that the following areas are declining: job application(down 36.13%), business license application(down 86.98%), certificate of occupancy issued for new buildings(down 33.43%), traffic collison(down 74.90%), 2020 NYC permitted events(average down by 98.76% per month). While the following is increasing: emergency notification for public health(up 1362.50%) and hospital icu bed numbers (up 77.23%).</p>
+          <p class="lead">We analyze COVID-19 Impact on job market, business license application, certificate of
+            occupancy issued for new buildings, public transportation, emergency notification for public health, and
+            permitted events.</br>Compare with the average two months ago, the result shows that the following areas are
+            declining: job application(down 36.13%), business license application(down 86.98%), certificate of occupancy
+            issued for new buildings(down 33.43%), traffic collison(down 74.90%), 2020 NYC permitted events(average down
+            by 98.76% per month). While the following is increasing: emergency notification for public health(up
+            1362.50%) and hospital icu bed numbers (up 77.23%).</p>
           <h5>Categories That Are Falling:</h5>
-          <table><tr>
-            <td><img src="picture/impact/job.png" width="320" height="220" /></td>
-            <td><img src="picture/impact/license.png" width="320" height="220" /></td>
-          </tr></table>
-          <table><tr>
-            <td><img src="picture/impact/c_o_issue.png" width="320" height="220" /></td>
-            <td><img src="picture/impact/collison.png" width="320" height="220" /></td>
-          </tr></table>
-           <table><tr>
-            <td><img src="picture/impact/events.png" width="400" height="230" /></td>
-          </tr></table>
+          <table>
+            <tr>
+              <td><img src="picture/impact/job.png" width="320" height="220" /></td>
+              <td><img src="picture/impact/license.png" width="320" height="220" /></td>
+            </tr>
+          </table>
+          <table>
+            <tr>
+              <td><img src="picture/impact/c_o_issue.png" width="320" height="220" /></td>
+              <td><img src="picture/impact/collison.png" width="320" height="220" /></td>
+            </tr>
+          </table>
+          <table>
+            <tr>
+              <td><img src="picture/impact/events.png" width="400" height="230" /></td>
+            </tr>
+          </table>
           <p class="lead"></br></p>
           <h5>Categories That Are Rising:</h5>
-          <table><tr>
-            <td><img src="picture/impact/public_health_noti.png" width="320" height="220" /></td>
-            <td><img src="picture/impact/icu.png" width="320" height="220" /></td>
-          </tr></table>
+          <table>
+            <tr>
+              <td><img src="picture/impact/public_health_noti.png" width="320" height="220" /></td>
+              <td><img src="picture/impact/icu.png" width="320" height="220" /></td>
+            </tr>
+          </table>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section-tail" id="contact">
+  <section class="section-tail " id="contact">
     <div class="container">
       <div class="row">
         <div class="col-lg-10 mx-auto">
@@ -400,7 +452,7 @@ Zip code naming from United Hospital Fund.
   </section>
 
   <!-- Footer -->
-  <footer class="py-2 bg-light">
+  <footer class="py-3 bg-light">
     <!--
     <div class="container">
       <p class="m-0 text-center text-white"> </p>
@@ -421,7 +473,8 @@ Zip code naming from United Hospital Fund.
   <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
 
   <script src="https://unpkg.com/topojson@3"></script>
-
+  <script src="https://github.hubspot.com/odometer/odometer.js"></script>
+  
   <!-- Custom JavaScript for this theme -->
   <script src="js/scrolling-nav.js"></script>
 
