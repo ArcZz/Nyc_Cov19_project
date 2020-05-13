@@ -14,6 +14,7 @@
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.3/animate.min.css" />
   <link href="css/odometer-theme-minimal.css" rel="stylesheet">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
   <!-- Custom styles for this template -->
   <link href="css/scrolling-nav.css" rel="stylesheet">
@@ -51,14 +52,14 @@
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#Map">Map</a>
           </li>
-           <li class="nav-item">
+          <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#Prediction">Prediction</a>
           </li>
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#Impact">Impact</a>
           </li>
-       
-          
+
+
         </ul>
       </div>
     </div>
@@ -72,7 +73,7 @@
     </div>
   </header>
 
-  <section class="section-head" >
+  <section class="section-head">
     <div class="container">
       <div class="row">
         <div class="col-lg-10 mx-auto">
@@ -93,7 +94,7 @@
               buildings, traffic collision, emergency notification for public health, hospital icu beds and permitted
               events</li>
           </ul>
-          
+
           <h5>Big Data Technology: </h5>
           <ul>
             <li>Spark and Pandas: data processing and analysis</li>
@@ -223,12 +224,22 @@
   </section>
 
 
-   <section id="">
+  <section id="">
     <div class="container">
       <div class="row">
         <div class="col-lg-10  mx-auto">
           <h2>Cases distribution</h2>
-  
+          <div id="timeslider">
+
+          </div>
+
+
+          <p>
+            <label for="amount">Date range:</label>
+            <input type="text" id="amount" readonly size="100" style="border:0; color:#f6931f; font-weight:bold;">
+          </p>
+
+
 
 
           <div id="anima">
@@ -274,23 +285,23 @@
               </div>
             </div>
           </div>
-           <p style="display: inline;">Click below buttons to check each borough data in Area chart.</p>
+          <p style="display: inline;">Click below buttons to check each borough data in Area chart.</p>
           <div class="col-lg-12 mx-auto ">
-           
+
 
             <div class="btn-group" role="group">
               <button type="button" id="img1" class="borobutton btn btn-link">Bronx_data</button>
               <button type="button" id="img2" class="borobutton btn btn-link">Borrklyn_data</button>
               <button type="button" id="img3" class="borobutton btn btn-link">Manhattan_data</button>
-               <button type="button" id="img4"  class="borobutton btn btn-link">Queens_data</button>
-                <button type="button" id="img5" class="borobutton btn btn-link">Staten_Island_data</button>
+              <button type="button" id="img4" class="borobutton btn btn-link">Queens_data</button>
+              <button type="button" id="img5" class="borobutton btn btn-link">Staten_Island_data</button>
             </div>
           </div>
           <div class="col-lg-12 mx-auto ">
-             <img  id="showimag"  src="picture/part1/bronx_data.png"  /></td>
+            <img id="showimag" src="picture/part1/bronx_data.png" /></td>
           </div>
 
-        
+
         </div>
       </div>
     </div>
@@ -397,7 +408,7 @@
     </div>
   </section>
 
-  <section >
+  <section>
     <div class="container">
       <div class="row">
         <div class="col-lg-10 mx-auto">
@@ -432,7 +443,7 @@
           <table>
             <tr>
               <p>Update: 2020-05-12 (from 2019-01-01)</p>
-              <td><img src="picture/impact/events.png" width="800" height="500"/></td>
+              <td><img src="picture/impact/events.png" width="800" height="500" /></td>
             </tr>
           </table>
           <p class="lead"></br></p>
@@ -442,7 +453,9 @@
             <li>Hospital ICU bed numbers up by: 77.23%</br></br></br></li>
           </ul>
           <h5>Categories That Are Rising:</h5>
-          <p>Update: 2020-05-12 (from 2019-06-01) &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; Update: 2020-05-12 (from 2020-03-26)</p>
+          <p>Update: 2020-05-12 (from 2019-06-01)
+            &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+            Update: 2020-05-12 (from 2020-03-26)</p>
           <table>
             <tr>
               <td><img src="picture/impact/public_health_noti.png" width="450" height="320" /></td>
@@ -459,14 +472,14 @@
       <div class="row">
         <div class="col-lg-10 mx-auto">
           <h2>Data Source</h2>
-          
+
           <ul>
             <li>NYC Department of Health and Mental Hygiene (DOHMH)</li>
             <li>New York State Department of Health</li>
             <li>THE CITY</li>
             <li>NYC Open Data</li>
           </ul>
-          
+
         </div>
       </div>
     </div>
@@ -496,6 +509,7 @@
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
   <!-- Plugin JavaScript -->
   <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
@@ -506,6 +520,7 @@
 
   <script src="https://unpkg.com/topojson@3"></script>
   <script src="js/odometer.min.js"></script>
+  <script src="https://unpkg.com/d3-simple-slider"></script>
 
   <!-- Custom JavaScript for this theme -->
   <script src="js/scrolling-nav.js"></script>
