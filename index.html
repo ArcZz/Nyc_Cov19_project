@@ -46,17 +46,19 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#about">About</a>
+            <a class="nav-link js-scroll-trigger" href="#about">Summary</a>
           </li>
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#Map">Map</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#services">Services</a>
+           <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#Prediction">Prediction</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+            <a class="nav-link js-scroll-trigger" href="#Impact">Impact</a>
           </li>
+       
+          
         </ul>
       </div>
     </div>
@@ -64,13 +66,13 @@
 
   <header class="bg-light">
     <div class="container text-center">
-      <h1>Big Data Final Project</h1>
-      <p class="lead">New York City Coronavirus Data Analysis</p>
-      <p> Team Member: Zhi Zhang, Jessie Jin, Xuexuan Wang, Jenny Zhou</p>
+      <h1>NYC Coronavirus Data Analysis</h1>
+      <p class="lead"> Big Data Final Project</p>
+      <p> Team Member: Jessie Jin, Zhi Zhang, Xuexuan Wang, Jenny Zhou</p>
     </div>
   </header>
 
-  <section class="section-head" id="about">
+  <section class="section-head" >
     <div class="container">
       <div class="row">
         <div class="col-lg-10 mx-auto">
@@ -110,7 +112,7 @@
     </div>
   </section>
 
-  <section id="NYC COVID-19 Data Summary">
+  <section id="about">
     <div class="container">
       <div class="row">
         <div class="col-lg-10 mx-auto">
@@ -233,7 +235,7 @@
           <h2>Information for Each Borough</h2>
           <p class="lead">Cases, Deaths and Hosplitalized Data for Each Borough</p>
           <p>Update: 2020-05-09 (from 2020-03-12)</p>
-          <div class="row " style="margin-bottom: 30px;">
+          <div class="row " style="margin-bottom: 40px;">
             <div class="col-lg-6 ">
               <div class="dropdown">
                 <button class="btn  btn-link dropdown-toggle " type="button" id="dropdownMenuButton"
@@ -258,63 +260,23 @@
               </div>
             </div>
           </div>
-           <div class="col-lg-12 mx-auto">
-          <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-     <img src="picture/part1/bronx_data.png"/></td>
-    </div>
-    <div class="carousel-item">
-     <img src="picture/part1/borrklyn_data.png" />
-    </div>
-    <div class="carousel-item">
-   <img src="picture/part1/manhattan_data.png" w/>
-    </div>
-  </div>
-  <a class="carousel-control-prev" style="color: #151513;" href="#carouselExampleControls" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>Previous
-  </a>
-  <a class="carousel-control-next" style="color: #151513;" href="#carouselExampleControls" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>Next
-  </a>
-</div>
-</div>
-          <table>
-            <tr>
+           <p style="display: inline;">Click below buttons to check each borough data in Area chart.</p>
+          <div class="col-lg-12 mx-auto ">
+           
 
-              <td>
-                <img src="picture/part1/bronx_data.png" width="460" height="375" /></td>
+            <div class="btn-group" role="group">
+              <button type="button" id="img1" class="borobutton btn btn-link">Bronx_data</button>
+              <button type="button" id="img2" class="borobutton btn btn-link">Borrklyn_data</button>
+              <button type="button" id="img3" class="borobutton btn btn-link">Manhattan_data</button>
+               <button type="button" id="img4"  class="borobutton btn btn-link">Queens_data</button>
+                <button type="button" id="img5" class="borobutton btn btn-link">Staten_Island_data</button>
+            </div>
+          </div>
+          <div class="col-lg-12 mx-auto ">
+             <img  id="showimag"  src="picture/part1/bronx_data.png"  /></td>
+          </div>
 
-            </tr>
-            <tr>
-
-
-              <td><img src="picture/part1/borrklyn_data.png" width="460" height="375" /></td>
-            </tr>
-            <tr>
-
-
-              <td><img src="picture/part1/manhattan_data.png" width="460" height="375" /></td>
-
-            </tr>
-          </table>
-          <table>
-
-          </table>
-          <table>
-            <tr>
-
-              <td><img src="picture/part1/queens_data.png" width="460" height="375" /></td>
-
-            </tr>
-            <tr>
-
-
-              <td><img src="picture/part1/Staten_Island_data.png" width="460" height="375" /></td>
-            </tr>
-          </table>
+        
         </div>
       </div>
     </div>
@@ -326,7 +288,8 @@
       <div class="row">
         <div class="col-lg-10 mx-auto">
           <h2>NYC COVID-19 Cases & Tests</h2>
-          <p class="lead">The number of tests is getting higher and the number of positive cases is flattening, which is good. </p>
+          <p class="lead">The number of tests is getting higher and the number of positive cases is flattening, which is
+            good. </p>
           <p>Update: 2020-05-12 (from 2020-03-12)</p>
 
           <table>
@@ -340,7 +303,7 @@
   </section>
 
 
-  <section id="NYC COVID-19 Cases Prediction">
+  <section id="Prediction">
     <div class="container">
       <div class="row">
         <div class="col-lg-10 mx-auto">
@@ -366,14 +329,15 @@
   </section>
 
 
-  <section id="Relational Factors Analysis">
+  <section id="Impact">
     <div class="container">
       <div class="row">
         <div class="col-lg-10 mx-auto">
-          <h2>Patient Data Analysis</h2>
+          <h2>Social Factors Affecting COVID</h2>
           <p class="lead">We analyzed three factors that would affect the positive population:</p>
           <ul>
-            <li>Age: adult and middle-aged group has the highest positive case number. The number of deaths and death rate are highest in senior citizens.</li>
+            <li>Age: adult and middle-aged group has the highest positive case number. The number of deaths and death
+              rate are highest in senior citizens.</li>
             <li>Income: the low-income group has the largest number of COVID-19 positive cases.</li>
             <li>Traffic: boroughs with more traffics have the higher number of COVID-19 infections.</br></br></br></li>
           </ul>
@@ -382,7 +346,7 @@
             Adult and middle-aged group has the highest case number.
             But the number of deaths and death rate are highest in senior citizens.</p>
           <p>Update: 2020-05-12 (from 2020-03-12)</p>
-          <img src="picture/part1/age_group.png"/>
+          <img src="picture/part1/age_group.png" />
 
 
           <h4 style="text-align:center"></br></br>—— How Income Affects The Positive Population ——</h4>
@@ -393,10 +357,16 @@
           <p>Update: 2020-05-12 (from 2020-03-12)</p>
           <img src="picture/impact/income_positive.png" width="1000" height="200" />
           <p class="lead"></br></p>
-          <table><tr>
-            <td><img src="picture/impact/income_positive_table.png" width="250" height="180"/></td>
-            <td><p class="lead" style = " margin-left:30px;"></br></br>According to the income, we divide the data into three groups. The result shows that the positive cases from the low-income group is much more than the middle-income group and moderate-income group.</p></td>
-          </tr></table>
+          <table>
+            <tr>
+              <td><img src="picture/impact/income_positive_table.png" width="250" height="180" /></td>
+              <td>
+                <p class="lead" style=" margin-left:30px;"></br></br>According to the income, we divide the data into
+                  three groups. The result shows that the positive cases from the low-income group is much more than the
+                  middle-income group and moderate-income group.</p>
+              </td>
+            </tr>
+          </table>
           <h4 style="text-align:center"></br></br>—— How Traffic Affects The Positive Population ——</h4>
           <p class="lead"></br></br>The bar graphs below show the number of car crashes and number of COVID-19 cases
             acrossing the five boroughs. Queens and Brooklyn have the highest number of infections also have the highest
@@ -412,7 +382,7 @@
     </div>
   </section>
 
-  <section id="services">
+  <section >
     <div class="container">
       <div class="row">
         <div class="col-lg-10 mx-auto">
@@ -420,7 +390,8 @@
           <p class="lead">We analyzed COVID-19 Impacts on the job market, business license application, certificate of
             occupancy issued for new buildings, public transportation, emergency notification for public health, and
             permitted events.</p>
-          <p class="lead">Comparing with the 6-month average prior to pandemic, the results show that the following areas are declining: </p>
+          <p class="lead">Comparing with the 6-month average prior to pandemic, the results show that the following
+            areas are declining: </p>
           <ul>
             <li>Job application down by: 39.19%</li>
             <li>Business license application down by: 86.71%</li>
@@ -432,14 +403,14 @@
           <p>Update: 2020-05-12 (from 2019-09-01)</p>
           <table>
             <tr>
-              <td><img src="picture/impact/job.png" width="450" height="320"/></td>
+              <td><img src="picture/impact/job.png" width="450" height="320" /></td>
               <td><img src="picture/impact/license.png" width="450" height="320" /></td>
             </tr>
           </table>
           <table>
             <tr>
               <td><img src="picture/impact/c_o_issue.png" width="450" height="320" /></td>
-              <td><img src="picture/impact/collison.png"  width="450" height="320"/></td>
+              <td><img src="picture/impact/collison.png" width="450" height="320" /></td>
             </tr>
           </table>
           <p class="lead"></br></p>
@@ -460,7 +431,7 @@
           <table>
             <tr>
               <td><img src="picture/impact/public_health_noti.png" width="450" height="320" /></td>
-              <td><img src="picture/impact/icu.png"  width="450" height="320"/></td>
+              <td><img src="picture/impact/icu.png" width="450" height="320" /></td>
             </tr>
           </table>
         </div>
@@ -468,12 +439,13 @@
     </div>
   </section>
 
-  <section id="intro">
+  <section id="source">
     <div class="container">
       <div class="row">
         <div class="col-lg-10 mx-auto">
           <h2>Data Source</h2>
-          <p>The data used in this project are derived from NYC Department of Health and Mental Hygiene (DOHMH), New York State Department of Health, THE CITY and NYC Open Data.</p>
+          <p>The data used in this project are derived from NYC Department of Health and Mental Hygiene (DOHMH), New
+            York State Department of Health, THE CITY and NYC Open Data.</p>
 
         </div>
       </div>

@@ -195,11 +195,29 @@ $(document).ready(function () {
       default:
          $("#showingmap").attr('src',"nycnum.html");
     }
+});
+ $(".borobutton").click(function () {
+    var val = $(this).attr("id");
+    switch (val) {
+      case "img1":
+        console.log(val)
+        $("#showimag").attr('src',"picture/part1/bronx_data.png"); 
+        break;
+      case "img2":
+        $("#showimag").attr('src',"picture/part1/borrklyn_data.png"); 
+        break;
+      case "img3":
+        $("#showimag").attr('src',"picture/part1/manhattan_data.png"); 
+        break;
+      case "img4":
+        $("#showimag").attr('src',"picture/part1/queens_data.png"); 
+        break;
+      default:
+         $("#showimag").attr('src',"picture/part1/Staten_Island_data.png");
+    }
 
-  })
+  });
+
 
 });
 
-
-
-;
