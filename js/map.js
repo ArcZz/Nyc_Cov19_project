@@ -1,12 +1,55 @@
+// var $animation_elements = $('.animation-element');
+// var $window = $(window);
 
-// var odometer = new Odometer({ 
-//   el: $('.odometer')[0], 
-//   value: 0, 
-//   theme: 'minimal',
-//   duration: 500
-// });
-// odometer.render();
-// $('#odometer').text(9000);
+// function check_if_in_view() {
+//   var window_height = $window.height();
+//   var window_top_position = $window.scrollTop();
+//   var window_bottom_position = (window_top_position + window_height);
+
+//   $.each($animation_elements, function() {
+//     var $element = $(this);
+//     var element_height = $element.outerHeight();
+//     var element_top_position = $element.offset().top;
+//     var element_bottom_position = (element_top_position + element_height);
+
+//     //check to see if this current container is within viewport
+//     if ((element_bottom_position >= window_top_position) &&
+//       (element_top_position <= window_bottom_position)) {
+//       $element.addClass('in-view');
+//     } else {
+//       $element.removeClass('in-view');
+//     }
+//   });
+// }
+
+// $window.on('scroll resize', check_if_in_view);
+// $window.trigger('scroll');
+
+
+var odometer = new Odometer({
+  el: $('.odometer')[0],
+  value: 0,
+  theme: 'minimal',
+  duration: 1000
+});
+odometer.render();
+
+
+$(window).scroll(function () {
+  var height = $(window).scrollTop();
+  var flag = 0;
+  if ((height > 500) && (flag == 0)) {
+    flag = 1;
+    // var iframe = $("#b");
+    // iframe.attr("src", iframe.data("src"));
+    $('#o1').text(184319);
+    $('#o2').text(15101);
+    $('#o3').text(48939);
+
+
+  }
+});
+
 
 
 
@@ -94,7 +137,7 @@ function makeMap(error, nyctopo, zdata) {
     })
 
     .on("mouseover", function (d, i) {
-      console.log(d)
+
 
       var zipcode = d.properties.zipcode;
       if (typeof (num[zipcode]) == "undefined") {
@@ -104,7 +147,7 @@ function makeMap(error, nyctopo, zdata) {
       d3.select(this).attr("fill", '#73bd41');
 
 
-      $("#myzip").text(d.properties.zipcode + " "+ "("+ d.properties.borough+")");
+      $("#myzip").text(d.properties.zipcode + " " + "(" + d.properties.borough + ")");
       $("#myname").text(d.properties.neighborhood);
       $("#myboro").text(d.properties.borough);
       $("#po_name").text(d.properties.po_name);
@@ -135,5 +178,28 @@ function makeMap(error, nyctopo, zdata) {
 
 
 
+$(document).ready(function () {
+  $(".dropdown-item").click(function () {
+    var val = $(this).attr("id");
+    switch (val) {
+      case "dpd2":
+        console.log(val)
+        $("#showingmap").attr('src',"nycrate.html"); 
+        break;
+      case "dpd3":
+        $("#showingmap").attr('src',"zctab.html"); 
+        break;
+      case "dpd4":
+        $("#showingmap").attr('src',"zctap.html"); 
+        break;
+      default:
+         $("#showingmap").attr('src',"nycnum.html");
+    }
+
+  })
+
+});
 
 
+
+;
