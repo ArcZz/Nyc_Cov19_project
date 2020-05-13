@@ -1,6 +1,6 @@
 import pyspark
 import pandas as pd
-#from sodapy import Socrata
+from sodapy import Socrata
 from pyspark.sql.types import *
 from pyspark.sql.functions import *
 from pyspark.sql import SparkSession
