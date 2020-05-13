@@ -25,14 +25,6 @@
 // $window.on('scroll resize', check_if_in_view);
 // $window.trigger('scroll');
 
-
-
-
-
-
-
-
-
 var width = 960,
   height = 960;
 var draw = 0;
@@ -48,16 +40,6 @@ var svg = d3.select("#d3map")
   .attr("viewBox", [0, 0, 960, 960]);
 
 
-
-
-// var color = d3.scaleSequential(d3.interpolateYlOrRd)
-//               .domain(d3.extent(data, d => d[encoding_defaults.color]))
-//               .domain(d3.extent(data.map(function (item) {
-//             return (item.glazed);
-//     }))
-//    )
-
-//               .unknown('#eee')
 
 d3.queue()
   .defer(d3.json, "data/nyctop.json")
