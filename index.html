@@ -91,6 +91,20 @@
               buildings, traffic collison, emergency notification for public health, hospital icu beds and permitted
               events</li>
           </ul>
+          <h5>Data: </h5>
+          <ul>
+            <li>NYC Department of Health and Mental Hygiene (DOHMH)</li>
+            <li>New York State Department of Health</li>
+            <li>THE CITY</li>
+            <li>NYC Open Data</li>
+          </ul>
+          <h5>Big Data Technology: </h5>
+          <ul>
+            <li>Spark and Pandas: data processing and analysis</li>
+            <li>SparkML: k-means algorithm for anomaly detection</li>
+            <li>Cases Prediction: Locistic Increase Model with Least Squares Approximation</li>
+            <li></li>
+          </ul>
         </div>
       </div>
     </div>
@@ -101,33 +115,34 @@
       <div class="row">
         <div class="col-lg-10 mx-auto">
           <h2>NYC COVID-19 Summary</h2>
-          <p>Data Update: 2020-05-10 (from 2020-03-12)</p>
+          <p>Data Update: 2020-05-12 (from 2020-03-12)</p>
           <div class="row" style="margin-top: 50px;">
             <div class="col-lg-4 mx-auto" align="center">
-              <h3 id="odometer" class="odometer">  </h3>
+              <h3 id="odometer" class="odometer"> 184319 </h3>
               <h5>Case</h5>
             </div>
             <div class="col-lg-4 mx-auto" align="center">
-              <h3 class="odometer"></h3>
+              <h3 class="odometer"> 15101 </h3>
                <h5>Death</h5>
             </div>
             <div class="col-lg-4 mx-auto" align="center">
-              <h3 class="odometer"></h3>
+              <h3 class="odometer"> 48939 </h3>
                <h5>Hosplitalized</h5>
             </div>
           </div>
         </div>
   
         <div class="col-lg-10 mx-auto"  align="center" style="margin-top: 10px;" >
-         <p class="lead"><br>NYC COVID-19 Cases, Deaths and Hosplitalized Data and Cases Growth Number</p>
+         <p class="lead"><br>NYC COVID-19 cases, deaths and hosplitalized data for each borough</p>
           <img src="picture/part1/nyc_summary_chart.png" width="480" height="300" />
         </div>
          <div class="col-lg-10 mx-auto"  align="center" >
-            <p class="lead"><br>Cases, Deaths and Hosplitalized Data and Cases Growth Rate</p>
+            <p class="lead"><br>Cases, Deaths and Hosplitalized Data</p>
          <img src="picture/part1/citywide_data.png"  width="566" height="425" />
         </div>
          <div class="col-lg-10 mx-auto"  align="center" >
-          <img src="picture/part1/nyc_cases_growth_rate.png" width="566" height="425" />
+          <p class="lead"><br>The Cases Growth Rate is getting lower than 5%.</p>
+          <img src="picture/part1/nyc_cases_growth_rate.png" width="540" height="415" />
         </div>
         
       </div>
@@ -217,7 +232,7 @@
         <div class="col-lg-10 mx-auto">
           <h2>Information for Each Borough</h2>
           <p class="lead">Cases, Deaths and Hosplitalized Data for Each Borough</p>
-          <p>Update: 2020-05-09 (from 2020-03-12)</p>
+          <p>Update: 2020-05-12 (from 2020-03-12)</p>
           <table>
             <tr>
                 <td align="center"  >
@@ -286,7 +301,8 @@
       <div class="row">
         <div class="col-lg-10 mx-auto">
           <h2>NYC COVID-19 Cases & Tasts</h2>
-          <p>Update: 2020-05-10 (from 2020-03-12)</p>
+          <p class="lead">The number of test is getting higher and the number of positive case is flattening, which is good. </p>
+          <p>Update: 2020-05-12 (from 2020-03-12)</p>
           <table>
             <tr>
               <td><img src="picture/part1/cases_tests_data.png" /></td>
@@ -303,8 +319,8 @@
       <div class="row">
         <div class="col-lg-10 mx-auto">
           <h2>NYC COVID-19 Cases Prediction</h2>
-          <p class="lead">NYC COVID-19 Cases Prediction by Locistic Increase Model with Least Squares Approximation</p>
-          <p>Update: 2020-05-10 (from 2020-03-12)</p>
+          <p class="lead">NYC COVID-19 cases prediction by logistic increase model with least squares approximation</p>
+          <p>Update: 2020-05-12 (from 2020-03-12)</p>
           <table>
             <tr>
               <td><img src="picture/part1/cases_prediction.png" /></td>
@@ -312,7 +328,7 @@
           </table>
         </div>
         <div class="col-lg-10 mx-auto">
-          <p class="lead"><br>NYC COVID-19 Cases Pridiction in A Week</p>
+          <p class="lead"><br>NYC COVID-19 Cases Prediction in A Week</p>
           <table>
             <tr>
               <td><img src="picture/part1/prediction7.png" width="430" height="300" /></td>
@@ -324,43 +340,37 @@
   </section>
 
 
-  <section id="services">
+  <section id="Patient Data Analysis">
     <div class="container">
       <div class="row">
         <div class="col-lg-10 mx-auto">
-          <h2>Who is Getting Sick</h2>
+          <h2>Patient Data Analysis</h2>
           <p class="lead">We analyzed three factors that would affect the positive population:</p>
           <ul>
-            <li>Age: </li>
+            <li>Age: teenager and middle-aged group has the highest positive case number. The number of deaths and death rate are highest in senior citizens.</li>
             <li>Income: the low-income group has the largest number of COVID-19 positive cases.</li>
             <li>Traffic: boroughs with more traffics have the higher number of COVID-19 infections.</br></br></br></li>
           </ul>
-          <h4 style="text-align:center">—— How Age Affects The Positive Popilation ——</h4>
-          <p></br>Update: 2020-05-10 (from 2020-03-12)</p>
-          <table>
-            <tr>
-              <td><img src="picture/part1/age_group.png" /></td>
-              <td><img src="picture/part1/age_group_rate.png" /></td>
-            </tr>
-          </table>
-          <h4 style="text-align:center"></br></br>—— How Income Affects The Positive Popilation ——</h4>
+          <h4 style="text-align:center">—— How Age Affects The Positive Population ——</h4>
+          <p class="lead"></br>The chart below shows the relationship between COVID-19 positive case and age.
+            Teenager and middle-aged group has the highest case number. 
+            But the number of deaths and death rate are highest in senior citizens.</p>
+          <p>Update: 2020-05-12 (from 2020-03-12)</p>
+          <img src="picture/part1/age_group.png"/>
+        
+
+          <h4 style="text-align:center"></br></br>—— How Income Affects The Positive Population ——</h4>
           <p class="lead"></br>The table below shows the relationship between COVID-19 positive case and income. The
             number of low-income units (blue part) gradually increases on the x-axis. The latter half of the x-axis
             shows that COVID-19 positive cases (orange part) is also increasing with the increase of number of
             low-income units.</p>
           <img src="picture/impact/income_positive.png" width="1000" height="200" />
           <p class="lead"></br></p>
-          <table>
-            <tr>
-              <td><img src="picture/impact/income_positive_table.png" width="250" height="180" /></td>
-              <td>
-                <p class="lead" style=" margin-left:30px;"></br></br>According to the income, we divide the data into
-                  three groups. The result shows that the positive cases from low-income group is much more than
-                  middle-income group and moderate-income group.</p>
-              </td>
-            </tr>
-          </table>
-          <h4 style="text-align:center"></br></br>—— How Traffic Affects The Positive Popilation ——</h4>
+          <table><tr>
+            <td><img src="picture/impact/income_positive_table.png" width="250" height="180"/></td>
+            <td><p class="lead" style = " margin-left:30px;"></br></br>According to the income, we divide the data into three groups. The result shows that the positive cases from the low-income group is much more than the middle-income group and moderate-income group.</p></td>
+          </tr></table>
+          <h4 style="text-align:center"></br></br>—— How Traffic Affects The Positive Population ——</h4>
           <p class="lead"></br></br>The bar graphs below show the number of car crashes and number of COVID-19 cases
             acrossing the five boroughs. Queens and Brooklyn have the highest number of infections also have the highest
             number of car crashes. Since data on nyc traffics are limited, number of car crashes is used to feflect the
