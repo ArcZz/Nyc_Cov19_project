@@ -9,9 +9,9 @@ var svg = d3.select("#d3map")
   .append("svg")
   .attr("viewBox", [0, 0, 960, 960]);
 
-var anima = d3.select("#anima")
-  .append("svg")
-  .attr("viewBox", [0, 0, 960, 960]);
+// var anima = d3.select("#anima")
+//   .append("svg")
+//   .attr("viewBox", [0, 0, 960, 960]);
   
 
 function toPercent(point) {
@@ -59,7 +59,6 @@ function makeMap(error, nyctopo, zdata,zcta) {
     .attr("stroke", "#747473")
     .attr("stroke-width", .8)
     .attr("fill", function (d) {
-
    
       var zipcode = d.properties.zipcode;
       if (typeof (num[zipcode]) == "undefined") {
@@ -114,55 +113,55 @@ function makeMap(error, nyctopo, zdata,zcta) {
 //         });
 // console.log(ba)
 
-  anima.selectAll("path")
-    .data(nyc.features)
-    .enter().append("path")
-    .attr("d", d3.geoPath().projection(projection))
-    .attr("stroke", "#747473")
-    .attr("stroke-width", 1)
-    .attr("fill", function (d) {
-      
-      var zipcode = d.properties.zipcode;
-      var ba = newArr.filter(function(p){
-        return p.zcta === zipcode.toString()  ;
-        });
-      
-      if ((ba.length === 0) || (typeof (ba[0].positive) == "undefined")) {
-        return "white";
-      }
-      if ( (ba[0].positive) == 0) {
-        return "white";
-      }
-       return color(ba[0].positive);
-    })
-    var date = makeMapDate();
-    console.log(date)
+  // anima.selectAll("path")
+  //   .data(nyc.features)
+  //   .enter().append("path")
+  //   .attr("d", d3.geoPath().projection(projection))
+  //   .attr("stroke", "#747473")
+  //   .attr("stroke-width", 1)
+  //   .attr("fill", function (d) {
 
+       
+  //     var zipcode = d.properties.zipcode;
+  //     var ba = newArr.filter(function(p){
+  //       return p.zcta === zipcode.toString()  ;
+  //       });
+      
+  //     if ((ba.length === 0) || (typeof (ba[0].positive) == "undefined")) {
+  //       return "white";
+  //     }
+  //     if ( (ba[0].positive) == 0) {
+  //       return "white";
+  //     }
+  //      return color(ba[0].positive);
+  //   })
+ 
 };
 
 function makeMapDate(a, b){
   var date = a + " "+ b;
+  console.log(date)
   return date;
 }
-$( function() {
-    $( "#timeslider" ).slider({
-      range: "min",
-      value: new Date('2020.03.31').getTime() / 1000,
-       step: 86400,
-      min: new Date('2020.03.31').getTime() / 1000,
-      max: new Date('2020.05.10').getTime() / 1000,
-      slide: function( event, ui ) {
-        $( "#amount" ).val( new Date(ui.value *1000).toDateString()   );
-        let time =  new Date(ui.value *1000) 
-         let date = time.getDate()
-         let month = time.getMonth()
-       makeMapDate(date,month);
-      }
-    });
+// $( function() {
+//     $( "#timeslider" ).slider({
+//       range: "min",
+//       value: new Date('2020.03.31').getTime() / 1000,
+//        step: 86400,
+//       min: new Date('2020.03.31').getTime() / 1000,
+//       max: new Date('2020.05.10').getTime() / 1000,
+//       slide: function( event, ui ) {
+//         $( "#amount" ).val( new Date(ui.value *1000).toDateString()   );
+//         let time =  new Date(ui.value *1000) 
+//          let date = time.getDate()
+//          let month = time.getMonth()
+//        makeMapDate(date,month);
+//       }
+//     });
 
-    $( "#amount" ).val(new Date($( "#timeslider" ).slider( "value" )*1000).toDateString() );
+//     $( "#amount" ).val(new Date($( "#timeslider" ).slider( "value" )*1000).toDateString() );
   
-  } );
+//   } );
   
     
 
@@ -235,9 +234,9 @@ function check_if_in_view() {
     if ((element_bottom_position >= window_top_position) &&
       (element_top_position <= window_bottom_position)) {
       setTimeout(function () {
-        $("#o1").html("184319");
-        $("#o2").html("15101");
-        $("#o3").html("48939");
+        $("#o1").html("185206");
+        $("#o2").html("15233");
+        $("#o3").html("49307");
         flag = 1;
       }, 1000);
     } else {
