@@ -1,29 +1,4 @@
-// var $animation_elements = $('.animation-element');
-// var $window = $(window);
 
-// function check_if_in_view() {
-//   var window_height = $window.height();
-//   var window_top_position = $window.scrollTop();
-//   var window_bottom_position = (window_top_position + window_height);
-
-//   $.each($animation_elements, function() {
-//     var $element = $(this);
-//     var element_height = $element.outerHeight();
-//     var element_top_position = $element.offset().top;
-//     var element_bottom_position = (element_top_position + element_height);
-
-//     //check to see if this current container is within viewport
-//     if ((element_bottom_position >= window_top_position) &&
-//       (element_top_position <= window_bottom_position)) {
-//       $element.addClass('in-view');
-//     } else {
-//       $element.removeClass('in-view');
-//     }
-//   });
-// }
-
-// $window.on('scroll resize', check_if_in_view);
-// $window.trigger('scroll');
 
 var width = 960,
   height = 960;
@@ -144,23 +119,6 @@ function makeMap(error, nyctopo, zdata) {
 // });
 // odometer.render();
 
-$(window).scroll(function () {
-  var height = $(window).scrollTop();
-  var flag = 0;
-  if ((height > 400) && (flag == 0)) {
-    flag = 1;
-    // var iframe = $("#b");
-    // iframe.attr("src", iframe.data("src"));
-   setTimeout(function(){
-    $("#o1").html("184319");
-     $("#o2").html("15101");
-      $("#o3").html("48939");
-    
-}, 2000);
-
-
-  }
-});
 
 $(document).ready(function () {
 
@@ -214,3 +172,61 @@ $(document).ready(function () {
 
 });
 
+var $animation_elements = $('#about');
+var $window = $(window);
+var flag = 0;
+
+function check_if_in_view() {
+  var window_height = $window.height();
+  var window_top_position = $window.scrollTop();
+  var window_bottom_position = (window_top_position + window_height);
+
+  $.each($animation_elements, function() {
+    var $element = $(this);
+    var element_height = $element.outerHeight();
+    var element_top_position = $element.offset().top;
+    var element_bottom_position = (element_top_position + element_height);
+    
+    //check to see if this current container is within viewport
+    if ((element_bottom_position >= window_top_position) &&
+      (element_top_position <= window_bottom_position)) {
+       setTimeout(function(){
+        $("#o1").html("184319");
+        $("#o2").html("15101");
+        $("#o3").html("48939");
+             flag = 1;
+        }, 1000);
+    } else {
+
+    }
+  });
+}
+function number_animation(){
+  if (flag == 0){
+    check_if_in_view();
+  
+  }
+  else{
+
+  }
+}
+$window.on('scroll resize', number_animation);
+$window.trigger('scroll');
+
+// $(window).scroll(function () {
+//   var height = $(window).scrollTop();
+//   var flag = 0;
+//   if ((height > 400) && (flag == 0)) {
+//     flag = 1;
+//     // var iframe = $("#b");
+//     // iframe.attr("src", iframe.data("src"));
+//    setTimeout(function(){
+//     $("#o1").html("184319");
+//      $("#o2").html("15101");
+//       $("#o3").html("48939");
+    
+// }, 2000);
+
+
+//   }
+// });
