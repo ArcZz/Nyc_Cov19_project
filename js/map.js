@@ -26,29 +26,7 @@
 // $window.trigger('scroll');
 
 
-var odometer = new Odometer({
-  el: $('.odometer')[0],
-  value: 0,
-  theme: 'minimal',
-  duration: 1000
-});
-odometer.render();
 
-
-$(window).scroll(function () {
-  var height = $(window).scrollTop();
-  var flag = 0;
-  if ((height > 500) && (flag == 0)) {
-    flag = 1;
-    // var iframe = $("#b");
-    // iframe.attr("src", iframe.data("src"));
-    $('#o1').text(184319);
-    $('#o2').text(15101);
-    $('#o3').text(48939);
-
-
-  }
-});
 
 
 
@@ -176,14 +154,47 @@ function makeMap(error, nyctopo, zdata) {
 
 };
 
+// var odometer = new Odometer({
+//   el: $('.odometer')[0],
+//   value: 0,
+//   theme: 'minimal',
+//   duration: 1000
+// });
+// odometer.render();
 
+$(window).scroll(function () {
+  var height = $(window).scrollTop();
+  var flag = 0;
+  if ((height > 400) && (flag == 0)) {
+    flag = 1;
+    // var iframe = $("#b");
+    // iframe.attr("src", iframe.data("src"));
+   setTimeout(function(){
+    $("#o1").html("184319");
+     $("#o2").html("15101");
+      $("#o3").html("48939");
+    
+}, 2000);
+
+
+  }
+});
 
 $(document).ready(function () {
+
+
+// setTimeout(function(){
+//     $("#o1").html("184319");
+//      $("#o2").html("15101");
+//       $("#o3").html("48939");
+    
+// }, 2000);
+
   $(".dropdown-item").click(function () {
     var val = $(this).attr("id");
     switch (val) {
       case "dpd2":
-        console.log(val)
+  
         $("#showingmap").attr('src',"nycrate.html"); 
         break;
       case "dpd3":
