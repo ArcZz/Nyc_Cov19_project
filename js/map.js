@@ -142,7 +142,7 @@ function makeMap(error, nyctopo, zdata, ) {
 
 function makeMapDate(a, b) {
   var date = a + " " + b;
-  console.log(date)
+ 
   return date;
 }
 // $( function() {
@@ -293,7 +293,7 @@ function check_if_in_view() {
     }
   });
 }
-console.log(fetchdata)
+
 
 function number_animation() {
   if (flag == 0) {
@@ -310,7 +310,7 @@ function number_animation() {
         d = new Date(fetchdata.timestamp)
       
          dateTime= d.setTime(d.getTime()+24*60*60*1000);
-        console.log(dateTime)
+   
          time = new Date(dateTime).toDateString()
         $("#myupdate").html("update: " + " " +time + " "+ "(from 2020-03-12) ")
 
