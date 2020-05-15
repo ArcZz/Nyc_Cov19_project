@@ -306,8 +306,12 @@ function number_animation() {
         len = data.length;
 
         fetchdata = data[(len - 1)];
-        console.log(fetchdata);
-        time = new Date(fetchdata.timestamp).toDateString()
+
+        d = new Date(fetchdata.timestamp)
+      
+         dateTime= d.setTime(d.getTime()+24*60*60*1000);
+        console.log(dateTime)
+         time = new Date(dateTime).toDateString()
         $("#myupdate").html("update: " + " " +time + " "+ "(from 2020-03-12) ")
 
       })
