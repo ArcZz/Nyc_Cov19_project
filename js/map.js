@@ -1,5 +1,6 @@
 var width = 960,
   height = 960;
+ fetchdata = 0;
 
 var projection = d3.geoMercator()
   .scale(81000)
@@ -12,7 +13,7 @@ var svg = d3.select("#d3map")
 // var anima = d3.select("#anima")
 //   .append("svg")
 //   .attr("viewBox", [0, 0, 960, 960]);
-  
+
 
 function toPercent(point) {
   var str = Number(point * 100).toFixed(2);
@@ -26,13 +27,14 @@ function toPercent(point) {
 d3.queue()
   .defer(d3.json, "data/nyctop.json")
   .defer(d3.csv, "data/zdata.csv")
-  .defer(d3.csv, "https://raw.githubusercontent.com/thecityny/covid-19-nyc-data/master/zcta.csv")
+
   .await(makeMap);
 
 
-function makeMap(error, nyctopo, zdata,zcta) {
+function makeMap(error, nyctopo, zdata, ) {
   if (error) throw error;
   // console.log(data.objects.zipcode.geometries.)
+
   var num = {}; // Create empty object for holding dataset
   var posi = [];
   zdata.forEach(function (d) {
@@ -59,7 +61,7 @@ function makeMap(error, nyctopo, zdata,zcta) {
     .attr("stroke", "#747473")
     .attr("stroke-width", .8)
     .attr("fill", function (d) {
-   
+
       var zipcode = d.properties.zipcode;
       if (typeof (num[zipcode]) == "undefined") {
         return "Lavender";
@@ -103,15 +105,15 @@ function makeMap(error, nyctopo, zdata,zcta) {
       d3.select(this).attr("fill", color(num[zipcode]));
     });
 
- 
- var newArr = zcta.filter(function(p){
-  return p.timestamp === "2020-05-12T04:00:00Z";
-});
 
-//   var ba = newArr.filter(function(p){
-//         return p.zcta === "10001";
-//         });
-// console.log(ba)
+  //  var newArr = zcta.filter(function(p){
+  //   return p.timestamp === "2020-05-12T04:00:00Z";
+  // });
+
+  //   var ba = newArr.filter(function(p){
+  //         return p.zcta === "10001";
+  //         });
+  // console.log(ba)
 
   // anima.selectAll("path")
   //   .data(nyc.features)
@@ -121,12 +123,12 @@ function makeMap(error, nyctopo, zdata,zcta) {
   //   .attr("stroke-width", 1)
   //   .attr("fill", function (d) {
 
-       
+
   //     var zipcode = d.properties.zipcode;
   //     var ba = newArr.filter(function(p){
   //       return p.zcta === zipcode.toString()  ;
   //       });
-      
+
   //     if ((ba.length === 0) || (typeof (ba[0].positive) == "undefined")) {
   //       return "white";
   //     }
@@ -135,11 +137,11 @@ function makeMap(error, nyctopo, zdata,zcta) {
   //     }
   //      return color(ba[0].positive);
   //   })
- 
+
 };
 
-function makeMapDate(a, b){
-  var date = a + " "+ b;
+function makeMapDate(a, b) {
+  var date = a + " " + b;
   console.log(date)
   return date;
 }
@@ -160,15 +162,58 @@ function makeMapDate(a, b){
 //     });
 
 //     $( "#amount" ).val(new Date($( "#timeslider" ).slider( "value" )*1000).toDateString() );
-  
+
 //   } );
-  
-    
+
+
 
 
 
 $(document).ready(function () {
-        
+
+  var datasummary = " ";
+  numid = 0;
+  tempsummary = [];
+
+
+  d3.csv("https://raw.githubusercontent.com/nychealth/coronavirus-data/master/summary.csv", function (error, csvdata) {
+
+    if (error) {
+      console.log(error);
+    }
+
+    datasummary = csvdata;
+    temparray = [];
+    for (let i in csvdata[0]) {
+      // debugger
+      var obj = {
+        id: i,
+        name: csvdata[0][i]
+      }
+      temparray.push(obj);
+    }
+
+    var apiid = temparray[0].id;
+    numid = apiid;
+    var apiname = temparray[1].id;
+
+    for (var i = 0, len = datasummary.length; i < len; i++) {
+      // console.log(datasummary[i][apiid])
+      // console.log(datasummary[i][apiname])
+      var obj = {
+        name: datasummary[i][apiname],
+        number: datasummary[i][apiid]
+
+      }
+      tempsummary.push(obj);
+    }
+
+
+
+  })
+
+
+
 
   $(".dropdown-item").click(function () {
     var val = $(this).attr("id");
@@ -194,7 +239,7 @@ $(document).ready(function () {
     var val = $(this).attr("id");
     switch (val) {
       case "img1":
-      
+
         $("#showimag").attr('src', "picture/part1/bronx_data.png");
         break;
       case "img2":
@@ -215,7 +260,7 @@ $(document).ready(function () {
 
 });
 
-var $animation_elements = $('#about');
+var $animation_elements = $('#ssummary');
 var $window = $(window);
 var flag = 0;
 
@@ -233,10 +278,14 @@ function check_if_in_view() {
     //check to see if this current container is within viewport
     if ((element_bottom_position >= window_top_position) &&
       (element_top_position <= window_bottom_position)) {
+
+
       setTimeout(function () {
-        $("#o1").html("185206");
-        $("#o2").html("15233");
-        $("#o3").html("49307");
+
+  
+        $("#o1").html(fetchdata.cases);
+        $("#o2").html(fetchdata.deaths);
+        $("#o3").html(fetchdata.ever_hospitalized);
         flag = 1;
       }, 1000);
     } else {
@@ -244,15 +293,35 @@ function check_if_in_view() {
     }
   });
 }
+console.log(fetchdata)
 
 function number_animation() {
   if (flag == 0) {
+    if (fetchdata == 0) {
+      d3.csv("https://raw.githubusercontent.com/thecityny/covid-19-nyc-data/master/nyc.csv", function (error, data) {
+        if (error) {
+          console.log(error);
+        }
+
+        len = data.length;
+
+        fetchdata = data[(len - 1)];
+        console.log(fetchdata);
+        time = new Date(fetchdata.timestamp).toDateString()
+        $("#myupdate").html("update: " + " " +time + " "+ "(from 2020-03-12) ")
+
+      })
+
+    } 
+
     check_if_in_view();
 
   } else {
 
   }
 }
+
+
 $window.on('scroll resize', number_animation);
 $window.trigger('scroll');
 
