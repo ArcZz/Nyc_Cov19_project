@@ -142,7 +142,7 @@ function makeMap(error, nyctopo, zdata, ) {
 
 function makeMapDate(a, b) {
   var date = a + " " + b;
- 
+
   return date;
 }
 // $( function() {
@@ -154,7 +154,7 @@ function makeMapDate(a, b) {
 //       max: new Date('2020.05.10').getTime() / 1000,
 //       slide: function( event, ui ) {
 //         $( "#amount" ).val( new Date(ui.value *1000).toDateString()   );
-//         let time =  new Date(ui.value *1000) 
+//         let time =  new Date(ui.value *1000)
 //          let date = time.getDate()
 //          let month = time.getMonth()
 //        makeMapDate(date,month);
@@ -282,10 +282,13 @@ function check_if_in_view() {
 
       setTimeout(function () {
 
-  
-        $("#o1").html(fetchdata.cases);
-        $("#o2").html(fetchdata.deaths);
-        $("#o3").html(fetchdata.ever_hospitalized);
+        //
+        // $("#o1").html(fetchdata.cases);
+        // $("#o2").html(fetchdata.deaths);
+        // $("#o3").html(fetchdata.ever_hospitalized);
+        $("#o1").html("215924");
+           $("#o2").html("23283");
+               $("#o3").html("55451");
         flag = 1;
       }, 1000);
     } else {
@@ -308,15 +311,15 @@ function number_animation() {
         fetchdata = data[(len - 1)];
 
         d = new Date(fetchdata.timestamp)
-      
+
          dateTime= d.setTime(d.getTime()+24*60*60*1000);
-   
+
          time = new Date(dateTime).toDateString()
-        $("#myupdate").html("update: " + " " +time + " "+ "(from 2020-03-12) ")
+        $("#myupdate").html("update: " + " " +"2020-07-11" + " "+ "(from 2020-03-12) ")
 
       })
 
-    } 
+    }
 
     check_if_in_view();
 
